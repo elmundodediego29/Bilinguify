@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilinguify - Rompe las barreras del idioma</title>
+    
+    <link rel="icon" href="imagenes/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="imagenes/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2 family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Bilingui<span class="accent">fy</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#funciones">Características</a></li>
+                    <li><a href="#descarga" class="btn-small">Descargar</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero-section">
+        <div class="parallax-bg"></div>
+        <div class="container hero-content">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Traduce el mundo en tiempo real</h1>
+                <p>Bilinguify combina traducción de voz instantánea, reconocimiento de cámara inteligente y la interfaz más fluida para que nunca te quedes sin palabras.</p>
+                <div class="hero-btns">
+                    <a href="#descarga" class="btn-primary ripple"><i class="fas fa-download"></i> Obtener App</a>
+                    <a href="#demo" class="btn-secondary"><i class="fas fa-play"></i> Ver Cómo Funciona</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <img src="/imagenes/logo.png" alt="Bilinguify App Interface" class="floating app-mockup">
+            </div>
+        </div>
+    </section>
+
+    <section id="funciones" class="features-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Comunicación Sin Límites</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Explora las potentes herramientas integradas en Bilinguify.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="icon-box"><i class="fas fa-microphone"></i></div>
+                    <h3>Comenzar a Hablar</h3>
+                    <p>Traducción de voz bidireccional instantánea. Habla de forma natural y deja que Bilinguify haga el resto.</p>
+                </div>
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="icon-box"><i class="fas fa-camera"></i></div>
+                    <h3>Traducción por Cámara</h3>
+                    <p>Apunta a carteles, menús o documentos y obtén una traducción clara superpuesta al instante.</p>
+                </div>
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="600">
+                    <div class="icon-box"><i class="fas fa-download"></i></div>
+                    <h3>Modo Offline</h3>
+                    <p>Descarga paquetes de idiomas completos para traducir con total precisión incluso sin conexión a internet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="capturas" class="screenshot-section">
+        <div class="parallax-bg-2"></div>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Una Interfaz Limpia y Profesional</h2>
+            <p class="section-subtitle" data-aos="fade-up">Diseñada minuciosamente para ofrecer la mejor experiencia de usuario.</p>
+
+            <div class="gallery" data-aos="zoom-in" data-aos-duration="200">
+                <figure class="thumb">
+                    <img src="/imagenes/imagen1.jpg" alt="Pantalla principal" data-large="/imagenes/imagen1.jpg">
+                    <figcaption>Pantalla principal optimizada para una traducción rápida a un solo toque.</figcaption>
+                </figure>
+                <figure class="thumb">
+                    <img src="/imagenes/imagen2.jpg" alt="Traducciones recientes" data-large="/imagenes/imagen2.jpg">
+                    <figcaption>Accede fácilmente a tus traducciones recientes y guarda frases recurrentes.</figcaption>
+                </figure>
+                <figure class="thumb">
+                    <img src="/imagenes/imagen3.jpg" alt="Reconocimiento OCR" data-large="/imagenes/imagen3.jpg">
+                    <figcaption>Reconocimiento óptico de caracteres de alta precisión en más idiomas.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Lightbox / Modal -->
+        <div id="lightbox" class="lightbox" aria-hidden="true">
+            <button class="lb-close" aria-label="Cerrar">&times;</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+
+        <style>
+            .gallery{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:30px 0}
+            .thumb{width:320px;max-width:32%;min-width:220px;text-align:center}
+            .thumb img{width:100%;height:auto;border-radius:12px;display:block;cursor:zoom-in;transition:transform .25s ease, box-shadow .25s ease}
+            .thumb img:hover{transform:scale(1.06);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+            .thumb figcaption{margin-top:10px;font-size:0.95rem;color:#666}
+            @media (max-width:900px){ .thumb{max-width:45%} }
+            @media (max-width:600px){ .thumb{max-width:100%} }
+
+            .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:9999;padding:20px}
+            .lightbox.show{display:flex}
+            .lightbox img{max-width:90%;max-height:90%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+            .lb-close{position:absolute;top:18px;right:18px;background:transparent;border:none;color:#fff;font-size:2.2rem;cursor:pointer;padding:6px;line-height:1}
+        </style>
+
+        <script>
+            (function(){
+                const thumbs = document.querySelectorAll('#capturas .thumb img');
+                const lb = document.getElementById('lightbox');
+                const lbImg = document.getElementById('lightbox-img');
+                const lbClose = document.querySelector('.lb-close');
+
+                function open(src, alt){
+                    lbImg.src = src;
+                    lbImg.alt = alt || '';
+                    lb.classList.add('show');
+                    lb.setAttribute('aria-hidden','false');
+                    document.body.style.overflow = 'hidden';
+                }
+                function close(){
+                    lb.classList.remove('show');
+                    lb.setAttribute('aria-hidden','true');
+                    lbImg.src = '';
+                    document.body.style.overflow = '';
+                }
+
+                thumbs.forEach(img=>{
+                    // hover already handled by CSS; click opens lightbox
+                    img.addEventListener('click', ()=> open(img.dataset.large || img.src, img.alt));
+                    // allow focus + Enter to open
+                    img.tabIndex = 0;
+                    img.addEventListener('keydown', e=>{ if(e.key === 'Enter') open(img.dataset.large || img.src, img.alt); });
+                });
+
+                lbClose.addEventListener('click', close);
+                lb.addEventListener('click', e=>{
+                    if(e.target === lb) close(); // click outside image
+                });
+                document.addEventListener('keydown', e=>{ if(e.key === 'Escape') close(); });
+            })();
+        </script>
+    </section>
+
+    <section id="demo" class="video-section">
+        <div class="container">
+            <div class="video-content-wrapper">
+                <div class="video-text" data-aos="fade-right">
+                    <h2>Mira Bilinguify en Acción</h2>
+                    <p>Descubre en este video demostrativo cómo Bilinguify procesa la voz en tiempo real, ofreciendo traducciones precisas con una latencia casi nula. El compañero de viaje y negocios definitivo.</p>
+                </div>
+                <div class="video-player-container" data-aos="fade-left">
+                    <video controls poster="https://via.placeholder.com/640x360/0056d2/fff?text=Reproducir+Demo+Bilinguify">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="descarga" class="download-section">
+        <div class="container text-center" data-aos="zoom-out">
+            <h2>¿Listo para hablar cualquier idioma?</h2>
+            <p>Descarga Bilinguify de forma gratuita y experimenta una comunicación verdaderamente global.</p>
+            <div class="download-btns">
+                <a href="#" class="btn-store ripple">
+                    <i class="fab fa-apple"></i>
+                    <span>App Store</span>
+                </a>
+                <a href="#" class="btn-store ripple">
+                    <i class="fab fa-google-play"></i>
+                    <span>Google Play</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Bilinguify. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
